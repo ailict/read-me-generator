@@ -18,5 +18,6 @@
   "homepage": "https://github.com/ailict/read-me-generator#readme",
   "dependencies": {
     "inquirer": "^8.2.0"
-  }
+  },
+  "devDependencies": {}
 }
