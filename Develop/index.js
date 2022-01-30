@@ -13,12 +13,17 @@ const questions = [
     'Give any testing instructions for this project',
     'Enter your Github username.',
   ]
-  
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, generateMarkdown(data), (err) =>
+    err ? console.error(err) : console.log('Success! Your README file has been created.')
+    )};
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+
+}
 
 // Function call to initialize app
 init();
