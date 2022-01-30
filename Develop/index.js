@@ -4,15 +4,49 @@ const fs = require("fs");
 
 // TODO: Create an array of questions for user input
 const questions = [
-    'What is the project name?',
-    'Give a short description of the project.',
-    'Describe any installation instructions.',
-    'Describe usage of this project.',
-    'Under what license is this project covered?',
-    'Give any contribution instructions for this project',
-    'Give any testing instructions for this project',
-    'Enter your Github username.',
-  ]
+    {
+        type: 'input',
+        name: 'title',
+        message:'What is the project name?',
+
+    },
+    {
+        type: 'input',
+        name:'description'
+        message: 'Give a short description of the project.',
+    },
+    {
+        type: 'input',
+        name:'installation',
+        message:'Describe any installation instructions.',
+    },
+    {
+        type: 'input',
+        name:'usage',
+        message:'Describe usage of this project.',
+    },
+    {
+        type: 'list',
+        name:'license',
+        message:'Under what license is this project covered?',
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None']
+    },
+    {
+        type: 'input',
+        name:'contribution',
+        message:'Give any contribution instructions for this project',
+    },
+    {
+        type: 'input',
+        name:'testing',
+        message:'Give any testing instructions for this project',
+    },
+    {
+        type: 'input',
+        name:'github',
+        message:'Enter your Github username.',
+    }
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
