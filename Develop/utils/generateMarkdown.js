@@ -2,16 +2,16 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(data) {
   if (data == 'MIT') {
-    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
+    return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
 
   } else if (data == 'APACHE 2.0') {
-    return `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]`;
+    return `![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`;
 
   } else if (data == 'GPL 3.0') {
-    return `[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)]`;
+    return `![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)`;
 
   } else if (data == 'BSD 3') {
-    return `[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)]`;
+    return `![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)`;
 
   } else if (data == 'None') {
     return '';
@@ -51,6 +51,7 @@ function renderLicenseSection(data) {
 function generateMarkdown(data) {
   let markdownRender = `
   # ${data.title}
+  ${renderLicenseBadge(data.license)}
   
   ## Description
   ${data.description}
@@ -64,7 +65,7 @@ function generateMarkdown(data) {
   - [Questions](#questions)
   
   ## Installation
-  ${data.install}
+  ${data.installation}
 
   ## Usage
   ${data.usage}
@@ -79,7 +80,7 @@ function generateMarkdown(data) {
   ${data.testing}
   
   ## Questions
-  Questions, comments, snide remarks? Find me on github: ${data.github}
+  Questions, comments, snide remarks? Find me on github: ${data.github} or email me at ${data.email}.
 `;
   return markdownRender;
 }
